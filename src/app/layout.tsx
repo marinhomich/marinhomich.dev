@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { cn } from "@/utils/cn";
+import ThemeProvider from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Michel Marinho",
@@ -16,8 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html
+      lang="en"
+      className={cn(GeistSans.variable, GeistMono.variable)}
+      suppressHydrationWarning
+    >
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+      <Analytics />
+      <SpeedInsights />
     </html>
   );
 }

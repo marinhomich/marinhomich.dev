@@ -1,4 +1,4 @@
-export default function Home() {
+export default function About() {
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-screen space-y-2 px-4 text-center md:px-6">
       <p className="text-3xl font-extrabold tracking-tighter sm:text-5xl">
