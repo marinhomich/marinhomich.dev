@@ -17,7 +17,9 @@ const config: Config = {
     },
     extend: {
       colors: {
+        border: "hsl(var(--border))",
         background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
       },

@@ -1,4 +1,4 @@
-export default function About() {
+export default function Articles() {
   return (
     <main className="container">
       <h1 className="text-3xl font-extrabold tracking-tighter sm:text-5xl">
