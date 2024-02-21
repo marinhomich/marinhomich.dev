@@ -7,6 +7,8 @@ import { cn } from "@/utils/cn";
 import ThemeProvider from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Footer from "@/components/footer";
+import Container from "@/components/container";
 
 export const metadata: Metadata = {
   title: "Michel Marinho",
@@ -20,16 +22,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn(GeistSans.variable, GeistMono.variable)}
-      suppressHydrationWarning
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased ",
+          GeistSans.variable,
+          GeistMono.variable
+        )}
+      >
+        <ThemeProvider>
+          <Container>{children}</Container>
+        </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
-      <Analytics />
-      <SpeedInsights />
     </html>
   );
 }

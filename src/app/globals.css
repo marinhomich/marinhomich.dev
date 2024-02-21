@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: rgba(0, 215, 161);
+    --secondary: rgba(0, 92, 80);
+
+    --background: 0 0% 100%;
+    ::selection {
+      background-color: rgba(0, 215, 161, 0.2);
+      color: rgba(0, 92, 80, 0.848);
+    }
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    ::selection {
+      background-color: rgba(0, 254, 220, 0.113);
+      color: rgba(81, 255, 217, 0.862);
+    }
+  }
+}

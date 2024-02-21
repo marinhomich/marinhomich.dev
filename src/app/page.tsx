@@ -1,12 +1,14 @@
-export default function Home() {
+import ThemeToggle from "@/components/theme-toggle";
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-screen space-y-2 px-4 text-center md:px-6">
-      <p className="text-3xl font-extrabold tracking-tighter sm:text-5xl">
+    <main className="container flex min-h-[calc(100vh-96px-24px)] w-full flex-col items-center justify-center ">
+      <h1 className="text-3xl font-extrabold tracking-tighter sm:text-5xl">
         Under development...
-      </p>
-      <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
+      </h1>
+      <h2 className="max-w-[600px] text-gray-500 md:text-xl/relaxed text-center dark:text-gray-400">
         We are working on something great. Please check back later.
-      </p>
-    </div>
+      </h2>
+    </main>
   );
 }
