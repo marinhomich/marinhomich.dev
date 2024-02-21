@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/utils/cn";
 import { Icons } from "./icons";
+import ThemeToggle from "./theme-toggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -64,7 +65,7 @@ export default function Header() {
               </div>
             </Link>
 
-            {/* <ThemeToggle /> */}
+            <ThemeToggle />
           </nav>
         </div>
       </div>

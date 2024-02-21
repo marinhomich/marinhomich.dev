@@ -1,13 +1,20 @@
 "use client";
 import { useTheme } from "next-themes";
+import { Icons } from "./icons";
+import { cn } from "@/utils/cn";
 
 const ThemeToggle = () => {
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <div>
-      <button onClick={() => setTheme("light")}>Light Mode</button>
-      <button onClick={() => setTheme("dark")}>Dark Mode</button>
+      <div className={cn("w-9 px-0 hover:cursor-pointer")}>
+        {theme === "dark" ? (
+          <Icons.moon onClick={() => setTheme("light")} className="h-5 w-5" />
+        ) : (
+          <Icons.sun onClick={() => setTheme("dark")} className="h-5 w-5" />
+        )}
+      </div>
     </div>
   );
 };
