@@ -6,11 +6,13 @@ import { cn } from "@/utils/cn";
 import ThemeProvider from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "@/components/footer";
-import Container from "@/components/container";
 
 export const metadata: Metadata = {
-  title: "Michel Marinho",
+  metadataBase: new URL("https://marinhomich.dev"),
+  title: {
+    default: "Michel Marinho",
+    template: "%s | Michel Marinho",
+  },
   description:
     "Hi there I'm Michel Marinho. I'm a Front-end Engineer based in Brazil. A young Frontend developer who wants to share his knowledge.",
 };
@@ -30,10 +32,10 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider>
-          <Container>{children}</Container>
+          {children}
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );

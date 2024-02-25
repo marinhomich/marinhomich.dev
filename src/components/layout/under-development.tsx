@@ -1,6 +1,6 @@
-export default function Articles() {
+export default function UnderDevelopment() {
   return (
-    <main className="container">
+    <main className="container text-center my-auto">
       <h1 className="text-3xl font-extrabold tracking-tighter sm:text-5xl">
         Under development...
       </h1>
