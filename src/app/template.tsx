@@ -3,6 +3,11 @@
 import { Icons } from "@/components/icons";
 import { Button, buttonVariants } from "@/components/ui/button";
 import CustomLink from "@/components/ui/custom-link";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { cn } from "@/utils/cn";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
@@ -69,43 +74,66 @@ export default function RootLayout({ children }: TemplateProps) {
               {/* <CommandMenuSite /> */}
             </div>
             <nav className="flex items-center">
-              <CustomLink href="https://github.com/marinhomich">
-                <div
-                  className={cn(
-                    buttonVariants({
-                      variant: "ghost",
-                    }),
-                    "w-9 px-0"
-                  )}
-                >
-                  <Icons.gitHub className="h-4 w-4" />
-                  <span className="sr-only">GitHub</span>
-                </div>
-              </CustomLink>
-              <CustomLink href="https://x.com/marinhomich">
-                <div
-                  className={cn(
-                    buttonVariants({
-                      variant: "ghost",
-                    }),
-                    "w-9 px-0"
-                  )}
-                >
-                  <Icons.x className="h-4 w-4" />
-                  <span className="sr-only">Twitter</span>
-                </div>
-              </CustomLink>
-              <Button variant="ghost" className="w-9 px-0">
-                <Icons.sun
-                  onClick={() => setTheme("dark")}
-                  className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-                />
-                <Icons.moon
-                  onClick={() => setTheme("light")}
-                  className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-                />
-                <span className="sr-only">Toggle theme</span>
-              </Button>
+              <Tooltip>
+                <TooltipTrigger>
+                  <CustomLink href="https://github.com/marinhomich">
+                    <div
+                      className={cn(
+                        buttonVariants({
+                          variant: "ghost",
+                        }),
+                        "w-9 px-0"
+                      )}
+                    >
+                      <Icons.gitHub className="h-4 w-4" />
+                      <span className="sr-only">GitHub</span>
+                    </div>
+                  </CustomLink>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Github</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger>
+                  <CustomLink href="https://x.com/marinhomich">
+                    <div
+                      className={cn(
+                        buttonVariants({
+                          variant: "ghost",
+                        }),
+                        "w-9 px-0"
+                      )}
+                    >
+                      <Icons.x className="h-4 w-4" />
+                      <span className="sr-only">Twitter</span>
+                    </div>
+                  </CustomLink>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Twitter</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" className="w-9 px-0">
+                    <Icons.sun
+                      onClick={() => setTheme("dark")}
+                      className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+                    />
+                    <Icons.moon
+                      onClick={() => setTheme("light")}
+                      className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+                    />
+                    <span className="sr-only">Toggle theme</span>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Toggle theme</p>
+                </TooltipContent>
+              </Tooltip>
             </nav>
           </div>
         </div>

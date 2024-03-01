@@ -38,6 +38,14 @@ const items = [
     endDate: "2020-12-31",
     location: "Manaus, Amazonas",
   },
+  {
+    jobTitle: "Intern",
+    company: "Alfa Telecom",
+    companyUrl: "https://www.linkedin.com/company/alfatelecomoficial/",
+    startDate: "2018-05-01",
+    endDate: "2018-09-30",
+    location: "Manaus, Amazonas",
+  },
 ];
 
 export default items;
