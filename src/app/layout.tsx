@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   },
   description: "Developer, writer, and creator.",
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://marinhomich.dev",
     title: "Michel Marinho",
     description: "Developer, writer, and creator.",
-    url: "https://marinhomich.dev",
     siteName: "Michel Marinho",
-    locale: "en_US",
-    type: "website",
   },
   robots: {
     index: true,
@@ -30,10 +30,14 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+
   twitter: {
-    title: "Lee Robinson",
     card: "summary_large_image",
+    title: "Michel Marinho",
+    description: "Developer, writer, and creator.",
+    creator: "@marinhomich",
   },
+  manifest: `https://marinhomich.dev/manifest.webmanifest`,
 };
 
 export default function RootLayout({
