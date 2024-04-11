@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { cn } from "@/utils/cn";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,15 +31,26 @@ export const metadata: Metadata = {
   manifest: `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}/manifest.webmanifest`,
 };
 
+const fontSans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased selection:bg-[#00fedc1d] selection:text-[#51ffd9dc]",
+          fontSans.variable
+        )}
+      >
         {children}
+
         <Analytics />
         <SpeedInsights />
       </body>
